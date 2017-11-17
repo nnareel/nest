@@ -1,0 +1,8 @@
+FROM centos7
+
+MAINTAINER n.nareel@gmail.com
+
+# Install sudo
+RUN apt-get update \
+  && apt-get -y install sudo \
+  && useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
